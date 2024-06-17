@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOTE LAND</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/logo main.png" type="image/x-icon" />
+  </head>
+  <body>
+    <section class="sidebar">
+      <div class="logo">
+        <img src="./images/logo main.png" alt="" />
+        <h1>NOTE LAND</h1>
+      </div>
+
+      <div class="notes-container"></div>
+
+      <button class="new-note-btn">New Note</button>
+    </section>
+
+    <!-- MAIN SECTION -->
+
+    <section class="main">
+      <!-- START OF MAIN SECTION -->
+
+      <!-- placeholder -->
+      <div class="placeholder">
+        <img src="./images/folder.png" alt="" />
+        <h3>NO NOTES FOUND</h3>
+        <p>ADD SOME NOTES BY CLICKING 'New Note' FROM THE LEFT.</p>
+      </div>
+
+      <div class="note-indicator">
+        <img src="./images/folder.png" alt="" />
+        <h3>PICK A NOTE TO VIEW</h3>
+      </div>
+
+      <!-- new note creation -->
+      <div class="new-note">
+        <input type="text" id="input-title" placeholder="Note Title" />
+        <textarea
+          name="description"
+          id="input-content"
+          rows="10"
+          cols="30"
+          placeholder="Note description"
+        ></textarea>
+        <div class="btns">
+          <button class="create-note">Create Note</button>
+          <button class="cancel-note">Cancel Note</button>
+        </div>
+      </div>
+
+      <div class="note-view"></div>
+
+      <div class="backdrop"></div>
+
+      <div class="task-creator">
+        <input type="text" placeholder="Task Name" id="task-input" />
+        <button class="create-task-btn">Create Task</button>
+      </div>
+
+      <!-- END OF MAIN SECTION -->
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1116 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/* MOBILE VIEW */
+@media screen and (min-width: 320px) and (max-width: 519px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu";
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* SIDEBAR SECTION */
+
+  .sidebar {
+    padding: 1rem 0;
+    background-color: #26a69a;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo new-note-btn"
+      "notes-container notes-container";
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    grid-area: logo;
+    cursor: pointer;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo h1 {
+    font-weight: 900;
+    font-size: 1.5rem;
+  }
+
+  .notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-area: notes-container;
+    margin: 1rem 0;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .notes-container::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .notes-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+    border-radius: 6px;
+  }
+
+  .notes-container::-webkit-scrollbar-thumb {
+    background: #ef5350; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners of the scrollbar thumb */
+  }
+
+  .notes-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+  }
+
+  .note {
+    width: 100%;
+    /* height: 35%; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #fff;
+    margin: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+  }
+
+  .note-title {
+    color: #ec407a;
+    font-size: 1.1rem;
+  }
+
+  .note-content {
+    max-width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.1rem;
+  }
+
+  .new-note-btn {
+    width: 90%;
+    height: 90%;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    outline: none;
+    cursor: pointer;
+    background-color: #80deea;
+    font-weight: 500;
+    font-size: 1.2rem;
+    grid-area: new-note-btn;
+  }
+
+  /* MAIN SECTION */
+
+  .main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5e35b1;
+    position: relative;
+    padding: 1rem;
+  }
+
+  .placeholder,
+  .note-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .placeholder img,
+  .note-indicator img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .placeholder h3,
+  .placeholder p {
+    color: white;
+  }
+
+  .note-indicator h3 {
+    color: white;
+  }
+
+  .new-note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: white;
+    width: 90%;
+    height: 60%;
+    border-radius: 0.7rem;
+    padding: 1rem;
+  }
+
+  #input-title,
+  #input-content {
+    border: none;
+    border-bottom: 3px solid black;
+    padding: 1rem;
+    outline: none;
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  #input-content {
+    resize: none;
+  }
+
+  .btns {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .btns button {
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+  }
+
+  .create-note {
+    background-color: #42a5f5;
+  }
+
+  .cancel-note {
+    background-color: #ef5350;
+  }
+
+  .note-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .note-view-heading {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .note-view-btns {
+    display: flex;
+  }
+
+  .note-view-btns button {
+    border: none;
+    outline: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+  }
+
+  .new-task {
+    background-color: #42a5f5;
+    font-size: 1rem;
+  }
+
+  .delete-note {
+    background-color: #ef5350;
+    font-size: 1rem;
+  }
+
+  .note-view-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    margin: 1rem;
+    height: calc(100vh - 76px);
+  }
+
+  .backdrop {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+    z-index: 10;
+  }
+
+  .task-creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: absolute;
+    z-index: 20;
+  }
+
+  #task-input {
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: 0.7rem;
+    width: 70%;
+  }
+
+  .create-task-btn {
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.7rem;
+    background-color: #42a5f5;
+  }
+
+  .task-manager {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .task-list-title {
+    color: #5e35b1;
+    font-weight: 600;
+  }
+
+  .ongoing-tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .curr-task {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .checkbox {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1.5px solid #c09494;
+    padding: 0.2rem;
+    position: relative;
+  }
+
+  .checkbox:checked::before {
+    content: "";
+    position: absolute;
+    top: 10%; /* Adjust the position to center the inner circle */
+    left: 10%;
+    width: 80%; /* Size to leave some gap */
+    height: 80%;
+    background-color: #5e35b1;
+    border-radius: 50%;
+  }
+
+  label {
+    font-size: 1.2rem;
+  }
+
+  .hr-tag {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #3e2723;
+    border-radius: 0.7rem;
+    outline: none;
+    border: none;
+  }
+
+  .completed-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .finish-task {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .span-check::before {
+    color: green;
+    font-weight: 900;
+    font-size: 1rem;
+    content: "\2714";
+  }
+}
+
+/* TAB VIEW */
+
+@media screen and (min-width: 520px) and (max-width: 921px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu";
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .sidebar {
+    display: grid;
+    width: 30%;
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas:
+      "logo"
+      "notes-container"
+      "new-note-btn";
+    padding: 1rem 0;
+    background-color: #26a69a;
+    text-align: center;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    grid-area: logo;
+    cursor: pointer;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo h1 {
+    font-weight: 900;
+    font-size: 1.5rem;
+  }
+
+  .logo h1:hover {
+    text-decoration: underline;
+  }
+
+  .notes-container {
+    grid-area: notes-container;
+    margin: 1rem 0;
+    overflow-y: auto;
+  }
+
+  .notes-container::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .notes-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+    border-radius: 6px;
+  }
+
+  .notes-container::-webkit-scrollbar-thumb {
+    background: #ef5350; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners of the scrollbar thumb */
+  }
+
+  .notes-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+  }
+
+  .note {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #fff;
+    margin: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+  }
+
+  .note-title {
+    color: #ec407a;
+  }
+
+  .note-content {
+    max-width: 170px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .new-note-btn {
+    width: 80%;
+    height: 70%;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.7rem;
+    outline: none;
+    cursor: pointer;
+    background-color: #80deea;
+    font-weight: 500;
+    font-size: 1.2rem;
+    grid-area: new-note-btn;
+    justify-self: center;
+  }
+
+  /* MAIN SECTION */
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 80%;
+    background-color: #5e35b1;
+    position: relative;
+  }
+
+  .placeholder,
+  .note-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 100vh;
+  }
+
+  .placeholder img,
+  .note-indicator img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .placeholder h3,
+  .placeholder p {
+    color: white;
+  }
+
+  .note-indicator h3 {
+    color: white;
+  }
+
+  .new-note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: white;
+    width: 80%;
+    height: 40%;
+    border-radius: 0.7rem;
+  }
+
+  #input-title,
+  #input-content {
+    border: none;
+    border-bottom: 3px solid black;
+    padding: 1rem;
+    outline: none;
+    width: 60%;
+    font-size: 1.2rem;
+  }
+
+  #input-content {
+    resize: none;
+  }
+
+  .btns {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .btns button {
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+  }
+
+  .create-note {
+    background-color: #42a5f5;
+  }
+
+  .cancel-note {
+    background-color: #ef5350;
+  }
+
+  .note-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .note-view-heading {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .note-view-btns button {
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+  }
+
+  .new-task {
+    background-color: #42a5f5;
+    font-size: 1rem;
+  }
+
+  .delete-note {
+    background-color: #ef5350;
+    font-size: 1rem;
+  }
+
+  .note-view-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    margin: 1rem;
+    height: calc(100vh - 76px);
+  }
+
+  .backdrop {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+    z-index: 10;
+  }
+
+  .task-creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: absolute;
+    z-index: 20;
+  }
+
+  #task-input {
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: 0.7rem;
+    width: 70%;
+  }
+
+  .create-task-btn {
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.7rem;
+    background-color: #42a5f5;
+  }
+
+  .task-manager {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .task-list-title {
+    color: #5e35b1;
+    font-weight: 600;
+  }
+
+  .ongoing-tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .curr-task {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .checkbox {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1.5px solid #c09494;
+    padding: 0.2rem;
+    position: relative;
+  }
+
+  .checkbox:checked::before {
+    content: "";
+    position: absolute;
+    top: 10%; /* Adjust the position to center the inner circle */
+    left: 10%;
+    width: 80%; /* Size to leave some gap */
+    height: 80%;
+    background-color: #5e35b1;
+    border-radius: 50%;
+  }
+
+  label {
+    font-size: 1.2rem;
+  }
+
+  .hr-tag {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #3e2723;
+    border-radius: 0.7rem;
+    outline: none;
+    border: none;
+  }
+
+  .completed-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .finish-task {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .span-check::before {
+    color: green;
+    font-weight: 900;
+    font-size: 1rem;
+    content: "\2714";
+  }
+}
+
+/* LAPTOP/DESKTOP VIEW */
+
+@media screen and (min-width: 920px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu";
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .sidebar {
+    display: grid;
+    width: 20%;
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas:
+      "logo"
+      "notes-container"
+      "new-note-btn";
+    padding: 1rem 0;
+    background-color: #26a69a;
+    text-align: center;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    grid-area: logo;
+    cursor: pointer;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo h1 {
+    font-weight: 900;
+    font-size: 1.8rem;
+  }
+
+  .logo h1:hover {
+    text-decoration: underline;
+  }
+
+  .notes-container {
+    grid-area: notes-container;
+    margin: 1rem 0;
+    overflow-y: auto;
+  }
+
+  .notes-container::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .notes-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+    border-radius: 6px;
+  }
+
+  .notes-container::-webkit-scrollbar-thumb {
+    background: #ef5350; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners of the scrollbar thumb */
+  }
+
+  .notes-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+  }
+
+  .note {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #fff;
+    margin: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+  }
+
+  .note-title {
+    color: #ec407a;
+  }
+
+  .note-content {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .new-note-btn {
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 0.7rem;
+    outline: none;
+    cursor: pointer;
+    background-color: #80deea;
+    font-weight: 500;
+    font-size: 1.2rem;
+    grid-area: new-note-btn;
+    justify-self: center;
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 80%;
+    background-color: #5e35b1;
+    position: relative;
+  }
+
+  .placeholder,
+  .note-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 100vh;
+  }
+
+  .placeholder img,
+  .note-indicator img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .placeholder h3,
+  .placeholder p {
+    color: white;
+  }
+
+  .note-indicator h3 {
+    color: white;
+  }
+
+  .new-note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: white;
+    width: 70%;
+    height: 60%;
+    border-radius: 0.7rem;
+  }
+
+  #input-title,
+  #input-content {
+    border: none;
+    border-bottom: 3px solid black;
+    padding: 1rem;
+    outline: none;
+    width: 60%;
+    font-size: 1rem;
+  }
+
+  #input-content {
+    resize: none;
+  }
+
+  .btns {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .btns button {
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+  }
+
+  .create-note {
+    background-color: #42a5f5;
+  }
+
+  .cancel-note {
+    background-color: #ef5350;
+  }
+
+  .note-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .note-view-heading {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .note-view-btns button {
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+  }
+
+  .new-task {
+    background-color: #42a5f5;
+    font-size: 1rem;
+  }
+
+  .delete-note {
+    background-color: #ef5350;
+    font-size: 1rem;
+  }
+
+  .note-view-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    margin: 1rem;
+    height: calc(100vh - 76px);
+  }
+
+  .backdrop {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+    z-index: 10;
+  }
+
+  .task-creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: absolute;
+    z-index: 20;
+  }
+
+  #task-input {
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: 0.7rem;
+    width: 70%;
+  }
+
+  .create-task-btn {
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.7rem;
+    background-color: #42a5f5;
+  }
+
+  .task-manager {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .task-list-title {
+    color: #5e35b1;
+    font-weight: 600;
+  }
+
+  .ongoing-tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .curr-task {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .checkbox {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1.5px solid #c09494;
+    padding: 0.2rem;
+    position: relative;
+  }
+
+  .checkbox:checked::before {
+    content: "";
+    position: absolute;
+    top: 10%; /* Adjust the position to center the inner circle */
+    left: 10%;
+    width: 80%; /* Size to leave some gap */
+    height: 80%;
+    background-color: #5e35b1;
+    border-radius: 50%;
+  }
+
+  label {
+    font-size: 1.2rem;
+  }
+
+  .hr-tag {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #3e2723;
+    border-radius: 0.7rem;
+    outline: none;
+    border: none;
+  }
+
+  .completed-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .finish-task {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .span-check::before {
+    color: green;
+    font-weight: 900;
+    font-size: 1rem;
+    content: "\2714";
+  }
+}
