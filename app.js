@@ -84,7 +84,7 @@ document.querySelector(".cancel-note").addEventListener("click", () => {
   clearInputs();
 });
 
-//FUNCTION responsilible to create the note, append to container and add a click listener to each created note
+//FUNCTION responsible to create the note, append to container and add a click listener to each created note
 function addNoteToContainer(note, currentNoteIndex) {
   let mainDiv = document.createElement("div");
   mainDiv.className = "note";
